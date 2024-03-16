@@ -1,0 +1,76 @@
+{% extends 'base.html'%}
+{% load static %}
+
+{% block content %}
+<style>
+    .form-control
+    {
+    margin-bottom:10px;
+    }
+    .y
+    {
+    background:#0a2b38;
+    min-height:550px;
+    }
+</style>
+<div class="row y">
+    <div class="h2 text-center"><b class="text-light">REGISTRATION</b>  <b class="text-warning">Now <i class="fa fa-users"></i></b></div>
+    <div class="col-sm-1"></div>
+    <div class="col-sm-4 p-5 bg-light">
+       <form method="post" autocomplete="off" enctype="multipart/form-data">
+           {% csrf_token %}
+            <div class="row g-3">
+  <div class="col">
+      Name
+    <input type="text" class="form-control"  aria-label="First name">
+  </div>
+  <div class="col">
+      Gender
+     <select class="form-select" aria-label="Default select example">
+  <option selected>Open this select menu</option>
+  <option value="1">One</option>
+  <option value="2">Two</option>
+  <option value="3">Three</option>
+</select>
+</div>
+</div>
+       <div class="row g-3">
+  <div class="col">Dob
+    <input type="text" class="form-control"  aria-label="First name">
+  </div>
+  <div class="col">Contact number
+    <input type="text" class="form-control" aria-label="Last name">
+  </div>
+</div><div class="row g-3">
+  <div class="col">Adhar Number
+    <input type="text" class="form-control"  aria-label="First name">
+  </div>
+  <div class="col">Password
+    <input type="text" class="form-control"  aria-label="Last name">
+  </div>
+</div><div class="row g-3">
+  <div class="col">State
+    <input type="text" class="form-control" aria-label="First name">
+  </div>
+  <div class="col">City
+    <input type="text" class="form-control"  aria-label="Last name">
+  </div>
+</div>
+           <div>
+  <label for="formFileLg" class="form-label">Profile Picture</label>
+  <input class="form-control form-control-lg" id="formFileLg" type="file">
+</div>
+
+           <input type="submit" value="Save" class="btn btn-warning"/>
+           <div class="col">
+           </div>
+       </form>
+    </div>
+    <div class="col-sm-1"></div>
+      <div class="col-sm-5">
+           <img src="{% static 'images/a.jpg' %}" style="min-height:500px;" class="d-block w-100"
+                         alt="...">
+      </div>
+    <div class="col-sm-1"></div>
+</div>
+{% endblock %}

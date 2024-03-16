@@ -1,0 +1,40 @@
+{% extends 'base.html'%}
+{% load static %}
+{% block content %}
+<div class="row">
+    <div class="col-sm-4"></div>
+    <div class="col-sm-4 m-2 p-5 bg-info">
+        <h1>Registration Form</h1>
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            Aadhar:
+            <input type="text" name="aadhar" placeholder="Enter aadhar no" class="form-control"><br>
+            Name:
+            <input type="text" name="name" placeholder="Enter your name" class="form-control"><br>
+            Gender:<br>
+            <input type="radio" name="gender" value="male"> Male
+            <input type="radio" name="gender" value="female"> Female
+            <input type="radio" name="gender" value="other"> Other
+            <br>
+            Mobile:
+            <input type="number" name="mobile" placeholder="Enter your mobile no" class="form-control"><br>
+            Upload Picture:
+            <input type="file" name="rpic" class="form-control"><br>
+            City:
+            <input type="text" name="city" placeholder="Enter city name" class="form-control"><br>
+            State:
+            <input type="text" name="state" class="form-control"><br>
+            Age:
+            <input type="number" name="age" class="form-control"><br>
+            Password:
+            <input type="password" name="pwd" class="form-control"><br>
+            <input type="submit" value="Register Now" class="btn btn-primary px-4">
+
+
+
+
+        </form>
+    </div>
+    <div class="col-sm-4"></div>
+</div>
+{% endblock%}

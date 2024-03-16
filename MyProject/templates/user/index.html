@@ -1,0 +1,246 @@
+{% extends 'base.html'%}
+{% load static %}
+
+{% block content %}
+<style>
+    .slider
+    {
+    border:1px solid black;
+    }
+    .mq
+    {
+       border:2px solid #0a2b38;
+       border-radius:7px;
+       box-shadow:5px 5px  4px #0a2b38;
+       text-color:#0a2b38;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+</style>
+<!-- start slider -->
+<div class="row slider">
+    <div class="col-sm-12">
+        <!-- start slider-->
+        <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
+                        aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+                        aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
+                        aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="{% static 'images/a.jpg' %}" style="max-height:580px" class="d-block w-100"
+                         alt="...">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>First slide label</h5>
+                        <p>Some representative placeholder content for the first slide.</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="{% static 'images/b.jpg'%}" style="max-height:580px" class="d-block w-100"
+                         alt="...">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Second slide label</h5>
+                        <p>Some representative placeholder content for the second slide.</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="{% static 'images/c.jpg'%}" style="max-height:580px" class="d-block w-100"
+                         alt="...">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Third slide label</h5>
+                        <p>Some representative placeholder content for the third slide.</p>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
+                    data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
+                    data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>            <!-- end slider -->
+
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-12 mq">
+        <marquee scrollamount="15"><h2>* ECI organises a virtual conference of chief Electoral Officers * Schedule to
+            fill casual vacancy and adjorned poll in the Assembly Constituencies-regarding*</h2></marquee>
+    </div>
+</div>
+<!-- end slider -->
+
+<!-- Start category -->
+<div class="row">
+    <div class="col-sm-1"></div>
+    <div class="col-sm-10 py-5">
+        <div class="row">
+            {% if p %}
+            {% for x in p%}
+            <div class="col-sm-2">
+                <div class="card">
+                    <img src="/{{x.ppic}}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <a href="#" class="btn btn-warning w-100">{{x.name}}</a>
+                    </div>
+                </div>
+            </div>
+            {% endfor%}
+            {% endif%}
+
+        </div>
+    </div>
+    <div class="col-sm-1"></div>
+</div>
+
+<!-- end Category-->
+<!-- start newProduct-->
+<div class="row newproduct py-3">
+    <div class="col-sm-1"></div>
+    <div class="col-sm-4 py-4 text-light">
+       <form method="get">
+           Select Party  Name
+           <select class="form-control">
+               {% if p%}
+               {% for a in p%}
+               <option>{{a.name}}</option>
+               {% endfor %}
+               {% endif%}
+           </select>
+           Message<textarea class="form-control mb-2" style="min-height:250px"></textarea>
+           <input type="submit" class="btn btn-warning" value="Save"/>
+       </form>
+    </div>
+    <div class="col-sm-2"></div>
+    <div class="col-sm-4"><h5 style="color:white">HON'BLE COMMISSION</h5>
+        <hr/>
+        <div class="row sb">
+            <div class="col-sm-12">
+                <div class="card mb-3" style="max-width: 540px;">
+                    <div class="row g-0">
+                        <div class="col-md-4">
+                            <a><img src="{% static 'images/sh.jpg'%}" class="card-img-top"
+                                    style="min-height:100px; width:100px;" alt="..."></a>
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h5 class="card-title">Sh.Sushil Chandra</h5>
+                                <p>Chief Election Commissioner</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="card mb-3" style="max-width: 540px;">
+                    <div class="row g-0">
+                        <div class="col-md-4">
+                            <a><img src="{% static 'images/sha.jpg'%}" class="card-img-top"
+                                    style="min-height:100px; width:100px;" alt="..."></a>
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h5 class="card-title">Sh. Rajiv Kumar</h5>
+                                <p>
+                                    Election Commissioner</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-1"></div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="card mb-3" style="max-width: 540px;">
+                    <div class="row g-0">
+                        <div class="col-md-4">
+                            <a><img src="{% static 'images/shr.jpg'%}" class="card-img-top"
+                                    style="min-height:100px; width:100px;" alt="..."></a>
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h5 class="card-title">Sh. Anup Chandra Pandey </h5>
+                                <p>Election Commissioner</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+
+<!-- end newProduct  -->
+<div class="row services py-5">
+    <div class="col-sm-1"></div>
+    <div class="col-sm-10">
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+            <div class="col">
+                <div class="card h-100">
+                    <img src="{% static 'images/meeting1.jpg'%}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
+                            additional content. This content is a little bit longer.</p>
+                    </div>
+                    <div class="card-footer">
+                        <small class="text-muted">Last updated 3 mins ago</small>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card h-100">
+                    <img src="{% static 'images/meeting2.jpg'%}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">This card has supporting text below as a natural lead-in to additional
+                            content.</p>
+                    </div>
+                    <div class="card-footer">
+                        <small class="text-muted">Last updated 3 mins ago</small>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card h-100">
+                    <img src="{% static 'images/meeting3.jpg'%}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
+                            additional content. This card has even longer content than the first to show that equal
+                            height action.</p>
+                    </div>
+                    <div class="card-footer">
+                        <small class="text-muted">Last updated 3 mins ago</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-1"></div>
+</div>
+
+{% endblock %}

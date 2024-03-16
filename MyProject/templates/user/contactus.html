@@ -1,0 +1,41 @@
+{% extends 'base.html'%}
+{% load static %}
+{% block content %}
+<style>
+.form-control
+{
+margin-bottom:8px;
+}
+.txta
+{
+min-height:80px;
+}
+</style>
+<div class="row contact">
+    <div class="h2 text-center">Sign<b class="text-info">In <i class="fa fa-phone"></i></b></div>
+<div class="col-sm-1"></div>
+<div class="col-sm-10 bg-light" style="min-height:400px">
+    <div class="row">
+        <div class="col-sm-5 p-4">
+            <form method="post">
+                {% csrf_token %}<!-- cross site reforgery-->
+                {% if S %}
+                <div class="alert alert-success">
+                    Thanks for enquiry...
+                </div>
+                {% endif%}
+
+                Name<input type="text" name="name"  required class="form-control" placeholder="Enter Your Name.."/>
+                Mobile<input type="number" name="mobile"  required class="form-control" placeholder="Enter Your Mobile.."/>
+                Email<input type="email" name="email"  required class="form-control" placeholder="Enter Your Email.."/>
+                Message
+                <textarea class="form-control" name="msg" style="min-height:80px;resize:none;" placeholder="Enter Your Message.." required></textarea>
+                <input type="submit" value="Save" class="btn btn-info"/>
+            </form>
+        </div>
+        <div class="col-sm-7"></div>
+    </div>
+</div>
+<div class="col-sm-1"></div>
+</div>
+{% endblock %}
